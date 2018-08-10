@@ -1,16 +1,56 @@
 <!DOCTYPE html>
 <html>
-  <head>
-    <title>Rock Dodger! (Beta)</title>
-    <link rel="stylesheet" type="text/css" href="index.css">
-  </head>
+    <head>
+        <title>Rock Dodger! (Beta)</title>
+        <link rel="stylesheet" type="text/css" href="index.css">
+    </head>
+    <body>
+        <div id="game">
+            <div id="dodger" style="bottom: 0px; left: 180px; right: 0px;"></div>
+        </div>
+        <script>
+            var dodger = document.getElementById('dodger');
 
-  <body>
-    <div id="game">
-      <div id="dodger" style="bottom: 0px; left: 180px;"></div>
-    </div>
-    <script>
-      // your code here
-    </script>
-  </body>
+            dodger.style.backgroundColor = "#000000";
+
+            dodger.style.backgroundColor = '#FF69B4';
+
+            dodger.style.bottom = '100px';
+
+            dodger.style.bottom = '0px';
+
+            document.addEventListener('keydown', function(e) {
+                //console.log("--> " + e.which);
+
+                if (e.which === 37) {
+                    // var leftNumbers = dodger.style.left.replace('px', '');
+                    // var left = parseInt(leftNumbers, 10);
+                    //
+                    // dodger.style.left = `${left - 1}px`;
+
+                    moveDodgerLeft();
+                } else {
+                    moveDodgerRight();
+                }
+            });
+
+            function moveDodgerLeft() {
+                var leftNumbers = dodger.style.left.replace('px', '');
+                var left = parseInt(leftNumbers, 10);
+console.log(left);
+                if (left > 0) {
+                    dodger.style.left = `${left - 1}px`;
+                }
+            }
+
+            function moveDodgerRight() {
+                var rightNumbers = dodger.style.left.replace('px', '');
+                var right = parseInt(rightNumbers, 10);
+console.log(right);
+                if (right < 360) {
+                    dodger.style.left = `${right + 1}px`;
+                }
+            }
+        </script>
+    </body>
 </html>

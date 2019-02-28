@@ -10,7 +10,44 @@
       <div id="dodger" style="bottom: 0px; left: 180px;"></div>
     </div>
     <script>
-      // your code here
+
+    var dodger = document.getElementById('dodger')
+
+    document.addEventListener('keydown', function(e) {
+      switch (e.which) {
+        case 37:
+        moveDodgerLeft()
+        break
+        case 39:
+        moveDodgerRight()
+        break
+      }
+    })
+
+// took me a while to realize that there was no right value, only left.
+// is that because the div dodger doesnt have a right value?
+// finally rewrote the if statement and used it as a left reference
+   function moveDodgerRight() {
+      var rightNumbers = dodger.style.left.replace('px', '')
+      var right = parseInt(rightNumbers, 10)
+
+      if (right > 0) {
+        dodger.style.left = `${right + 1}px`
+      }
+    }
+
+
+    function moveDodgerLeft() {
+      var leftNumbers = dodger.style.left.replace('px', '')
+      var left = parseInt(leftNumbers, 10)
+
+      if (left > 0) {
+        dodger.style.left = `${left - 1}px`
+      }
+    }
+
+
+    // your code here
     </script>
   </body>
 </html>

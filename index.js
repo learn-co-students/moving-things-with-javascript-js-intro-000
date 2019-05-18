@@ -9,9 +9,9 @@ function moveDodgerLeft() {
 };
 function moveDodgerRight() {
   let left = parseInt(dodger.style.left,10);
-  let divWidth = parseInt(gameDiv.style.width,10);
-  let dodgerWidth = parseInt(dodger.style.width,10);
-  //if (left<divWidth-dodgerWidth)
+  let divWidth = parseInt(gameDiv.clientWidth,10);
+  let dodgerWidth = parseInt(dodger.clientWidth,10);
+  if (left+dodgerWidth<divWidth)
   {
     dodger.style.left = `${left+1}px`;
   }

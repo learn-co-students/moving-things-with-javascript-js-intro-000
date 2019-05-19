@@ -10,7 +10,23 @@
       <div id="dodger" style="bottom: 0px; left: 180px;"></div>
     </div>
     <script>
-      // your code here
+    let speed = 7;
+    document.addEventListener('keydown', function(e) {
+      if (e.which === 37) {
+        let leftNumbers = dodger.style.left.replace('px', '')
+        let left = parseInt(leftNumbers, 10)
+        if(left>0) {
+          dodger.style.left = `${left - speed}px`;
+        }
+      }
+      if (e.which === 39) {
+        let rightNumbers = dodger.style.left.replace('px', '')
+        let left = parseInt(rightNumbers, 10)
+        if(left<document.querySelector("#game").offsetWidth-document.querySelector("#dodger").offsetWidth) {
+          dodger.style.left = `${left + speed}px`;
+        }
+      }
+    })
     </script>
   </body>
 </html>

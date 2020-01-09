@@ -11,34 +11,62 @@
         <div id="dodger" style="bottom: 0px; left: 180px;"></div>
     </div>
     <script>
-      // your code here
-      var dodger = document.getElementById('dodger')
-      dodger.style.backgroundColor = "#000000"
-      dodger.style.backgroundColor = '#FF69B4'
-      dodger.style.bottom = '100px'
-      dodger.style.bottom = '0px'
+        // your code here
+        var dodger = document.getElementById('dodger')
+        dodger.style.backgroundColor = "#000000"
+        dodger.style.backgroundColor = '#FF69B4'
+        dodger.style.bottom = '100px'
+        dodger.style.bottom = '0px'
 
-      document.addEventListener('keydown', function (e) {
-           console.log(e.which)
-       })
+        
+
+         document.addEventListener('keydown', function (e) {
+                if (e.which === 37) {
+                    
+                    
+                        console.log(e.which)
+                    
+                    moveDodgerLeft()
+                }
+                else if (e.which === 39) {
+                    
+                    
+                        console.log(e.which)
+                    
+                    moveDodgerRight()
+                }
+            });
+
+            
 
 
-           var dodger = document.getElementById('dodger')
+        var dodger = document.getElementById('dodger')
 
-           function moveDodgerLeft() {
-                   var leftNumbers = dodger.style.left.replace('px', '')
-                   var left = parseInt(leftNumbers, 10)
+        function moveDodgerLeft() {
+            var leftNumbers = dodger.style.left.replace('px', '')
+            var left = parseInt(leftNumbers, 10)
 
-                   if (left > 0 ) {
-                       dodger.style.left = `${left - 1}px`
-                   }
-               }
+            if (left > 0) {
+                dodger.style.left = `${left - 1}px`
+            }
+        }
 
-               document.addEventListener('keydown', function (e) {
-                   if (e.which === 37) {
-                       moveDodgerLeft()
-                   }
-               })
+        var dodge = document.getElementById('dodger')
+
+        function moveDodgerRight() {
+            // var rightNumbers = dodger.style.right.replace('px', '')
+            // var right = parseInt(rightNumbers, 10)
+
+            var leftNumbers = dodger.style.left.replace('px', '')
+            var left = parseInt(leftNumbers, 10)
+
+            if (left < 360) {
+            dodge.style.left = `${left + 1}px`
+            }
+        }
+
+        
+       
 
     </script>
 </body>

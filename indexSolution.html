@@ -1,0 +1,38 @@
+// Code working up to the final solution
+
+<script>
+    // your code here
+    var dodger = document.getElementById('dodger') // get the object (dodger)
+    dodger.style.backgroundColor = "#000000" // black
+    dodger.style.backgroundColor = '#FF69B4' // pink
+
+    // Readers to see the px position of the dodger
+    console.log(dodger.style.left) // "180px"
+    console.log(dodger.style.bottom) // "0px"
+
+    // Move the dodger
+    dodger.style.bottom = '100px' // up
+    dodger.style.bottom = '50px' // down
+    dodger.style.bottom = '0px' // origional postion
+
+    // Reader to see the numeric value for a key
+    // FIRST click on the window (where the dodger is rendered)
+    // THEN click any key to see its numeric value
+    // left arrow key = 37 & right arrow key = 39
+    document.addEventListener('keydown', function(e) {
+      console.log(e.which)
+    })
+
+    // 37 triggers a move to the left
+    document.addEventListener('keydown', function(e) {
+      if (e.which === 37) {
+        var leftNumbers = dodger.style.left.replace('px', '')
+        var left = parseInt(leftNumbers, 10)
+    
+        dodger.style.left = `${left - 1}px`
+      }
+    })
+
+  </script>
+
+

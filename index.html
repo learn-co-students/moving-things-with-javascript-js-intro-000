@@ -9,23 +9,8 @@
     <div id="game">
       <div id="dodger" style="bottom: 0px; left: 180px;"></div>
     </div>
-    <script>
-    var dodger = document.getElementById('dodger')
+<script type="text/javascript" src="index.js">
 
-    dodger.style.backgroundColor = "#000000"
-    dodger.style.backgroundColor = '#FF69B4'
-
-    document.addEventListener('keydown', function(e) {
-      var horizontalLeft = parseInt(dodger.style.left)
-
-      if (e.which === 37 && horizontalLeft > 0) {
-        dodger.style.left = `${horizontalLeft - 10}px`
-      }
-
-      else if (e.which === 39 && horizontalLeft < 360){
-        dodger.style.left = `${horizontalLeft + 10}px`
-      }
-    })
-    </script>
+</script>
   </body>
 </html>

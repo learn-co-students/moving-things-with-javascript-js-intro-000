@@ -10,7 +10,23 @@
       <div id="dodger" style="bottom: 0px; left: 180px;"></div>
     </div>
     <script>
-      // your code here
+      document.addEventListener('keydown', function(e) {
+  xpos = parseInt(dodger.style.left)
+  ypos = parseInt(dodger.style.bottom)
+  console.log(e.which)
+  if (e.which === 37) {
+	if (xpos > 0) {dodger.style.left = `${xpos - 1}px`}
+	}
+  if (e.which === 39) {
+	if (xpos < 360) {dodger.style.left = `${xpos + 1}px`}
+	}
+  if (e.which === 40) {
+	if (ypos > 0) {dodger.style.bottom = `${ypos - 1}px`}
+	}
+  if (e.which === 38) {
+	if (ypos < 380) {dodger.style.bottom = `${ypos + 1}px`}
+	}
+})
     </script>
   </body>
 </html>
